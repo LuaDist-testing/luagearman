@@ -1,15 +1,15 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "luagearman"
-version = "0.1-0"
+version = "0.2-0"
 -- LuaDist source
 source = {
-  tag = "0.1-0",
+  tag = "0.2-0",
   url = "git://github.com/LuaDist-testing/luagearman.git"
 }
 -- Original source
 -- source = {
--- 	url = "https://bitbucket.org/senanetworksinc/luagearman/raw/50f0205fd758e62bfda3e8131aadc455c3f8c264/luagearman-0.1-0.tar.gz",
+-- 	url = "https://bitbucket.org/senanetworksinc/luagearman/raw/849c2f89c970767d45e6456794cf36d58e88ae40/luagearman-0.2-0.tar.gz",
 -- }
 description = {
 	summary = "luagearman",

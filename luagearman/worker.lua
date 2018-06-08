@@ -111,10 +111,13 @@ function worker:addFunction(function_name, timeout, func, context)
 
 	local clb = ffi.cast("gearman_worker_fn*", function(job, context, result_size, ret_ptr)
 		local workload = gearman.ffi.gearman_job_workload(job);
-		--local r = gearman.ffi.gearman_job_workload_size(job);
+		local workload_size = gearman.ffi.gearman_job_workload_size(job);
+		local dst = ffi.new("char[?]", workload_size + 1)
+		ffi.fill(dst, workload_size + 1)
+		ffi.copy(dst, workload, workload_size)
 
 		-- clientから送られてくるargmentはstringなのでデコードする
-		local decorded = ffi.string(ffi.cast("const char*", workload))
+		local decorded = ffi.string(dst)
 
 		local ret = func(decorded)
 
